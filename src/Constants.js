@@ -9,7 +9,14 @@ module.exports = {
         ORDERS_PAGE: 'ORDERS_PAGE'
     },
     App: {
-         BACKEND_URL: 'http://192.168.1.100:12000'
+         BACKEND_URL: 'http://localhost:12000'
+    },
+    OrderStatus: {
+         IN_PROCESSING: 5,
+         IN_DELIVERY: 6,
+        DELIVERY_SUCCESS: 7,
+        DELIVEY_FAILED: 8,
+        DEFAULT: 0
     }
 
 };

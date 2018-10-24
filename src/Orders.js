@@ -12,13 +12,13 @@ import Datetime from 'react-datetime';
 class Orders extends Component{
 
     componentDidMount(){
-        return executGetApiCall(`/admin/getOrders`).then(response=>{
+/*        return executGetApiCall(`/admin/getOrders`).then(response=>{
             console.debug(response);
             this.props.setOrders(response.data);
 
         }).catch(error=>{
             console.error(error);
-        });
+        });*/
     }
 
 

@@ -8,32 +8,43 @@ export const executGetApiCall= async(url)=>{
         try{
             const response = await fetch(backendUrl+url);
             const responseData = await response.json();
+            console.log(response);
+            console.log(responseData);
             return responseData;
         }catch (e) {
             console.log(e);
         }
     };
 export const executePostApiCall = async(url, data)=>{
-        try{console.log('data:',data);
+        try{
             console.log(JSON.stringify(data));
 
             const response = await fetch(backendUrl+url,{
                 method: 'POST',
                 headers: {
-                    Accept: 'applicaion/json',
+                    Accept: 'application/json',
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             });
-            console.log(response);
-            const responseData = await response.json();
-            // console.log(responseData);
-            console.log('################################333');
-            console.log(responseData);
-            return responseData;
+
+            
+
+            return await response.json();
         }catch (e) {
             console.log(e);
         }
+
+       /* return fetch(backendUrl+url,{
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => response.json());*/
+
+
     };
 
 export const executePutApiCall= async(url, data)=>{
